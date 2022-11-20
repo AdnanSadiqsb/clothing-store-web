@@ -1,0 +1,51 @@
+.navbar_bg{
+    background-image: linear-gradient(to right, #635dc0, #3027ae);
+    border-bottom: 5px solid white;
+
+}
+.nav-link {
+    color: white !important;
+    font-size: 1.1rem;
+}
+.navbar-brand{
+    color: white !important;
+}
+.custom-icons{
+
+    color: tomato;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-right: 1.5rem;
+    transition: all 0.1s ease-in;
+}
+.custom-icons:hover{
+    color: red;
+    transform: translateY(-15%);
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+.speedDail{
+    position: fixed;
+    right: 1vmax;
+    top: 4vmax;
+    z-index: 11;
+
+}
+.speedDailIcon{
+   height: 56px;
+   width: 56px;
+   border-radius: 10%;
+}
+
+@media screen and (max-width:600px) {
+    .speedDail{
+        top: 10vmax;
+    }
+    
+}
