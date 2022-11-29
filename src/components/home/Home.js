@@ -7,6 +7,7 @@ import {clearErrors, getProduct} from '../../actions/productAction'
 import {useSelector,useDispatch} from 'react-redux'
 import Loader from '../layout/loader/Loader'
 import {useAlert} from 'react-alert'
+import Carousel from '../carousel/Carousel'
 export default function Home() {
   const alert=useAlert()
   
@@ -34,25 +35,29 @@ export default function Home() {
     <Fragment>
     <MeatData title="Home  --Ecommerce"/>
       <div className="banner">
-          <p>welcome to E-Commerce</p>
+          <p>welcome to our Online Store</p>
           <h1>FIND AMAZING PRODUCTS BELOW !</h1>
           <a href="#container">
               <button>scroll <FaMouse/></button>
           </a>
       </div>
-      <h2 className='homeHeading'>Feature Products</h2>
-      <p>total products:{productsCount} </p>
-      <div className="container" id='container'>
-      {
-        products && products.map(product=>{
-        
-          return <Product product={product} key={product._id}/>
-        })
-      }
+      <div className='items-container' id='container' >
+
+        <div className='line'></div>
+        <h1 className='heading'>New Ariavals</h1>
+        <div className="items-section" >
+        {
+          products && products.map(product=>{
+          
+            return <Product product={product} key={product._id}/>
+          })
+        }
 
 
+        </div>
       </div>
-  </Fragment>}
-    </Fragment>
-  )
-}
+      <Carousel/>
+
+    </Fragment>}
+  </Fragment>
+)}

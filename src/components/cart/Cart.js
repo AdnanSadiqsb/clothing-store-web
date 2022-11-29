@@ -86,9 +86,9 @@ function Cart() {
         :    <Fragment>
         <div className="cartPage">
           <div className="cartHeader">
-              <p>product</p>
-              <p>quantity</p>
-              <p>subtotal</p>
+              <p>Product</p>
+              <p>Quantity</p>
+              <p>Subtotal</p>
           </div>
           {
               cartItems && cartItems.map((item, index)=>(
@@ -122,7 +122,7 @@ function Cart() {
           </div>
           <div className='checkOutBox'>
   
-              <button onClick={checkOutHandler} >Check Out</button>
+              <button className='btn-more' onClick={checkOutHandler} >Check Out</button>
           </div>
         </div>
       </Fragment>    

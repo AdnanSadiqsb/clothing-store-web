@@ -8,7 +8,7 @@ function ReviewCard({review}) {
   const options={
         size:window.innerWidth<600 ?"small":"medium",
         value:review.rating,
-        // readOnly:true,
+        readOnly:true,
         precision:0.5}
 
   return (

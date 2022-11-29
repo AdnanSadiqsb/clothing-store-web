@@ -133,7 +133,12 @@ function ProductDetail() {
                         <span className='deatailBlock-2-span'>({product.numOfReviews} Reviews)</span>
                     </div>
                     <div className="deatailBlock-3">
+                        <div className='priceDetail-cont'>
+
+                        <h1>RS:{product.price-product.price/100*10}</h1>
                         <h1>RS:{product.price}</h1>
+
+                        </div>
                         <div className='deatailBlock-3-1'>
                             <div className='deatailBlock-3-1-1'>
                                 <button onClick={decreaseQuantity}>-</button>
@@ -141,22 +146,25 @@ function ProductDetail() {
                                 <button onClick={increaseQuantity}>+</button>
                             </div>
                             {"  "}
-                            <button className='btn-add-to-cart' disabled={product.stock<=0?true:false} onClick={addToCartHandler}>Add To Cart</button>
+                            <button className='btn-more' disabled={product.stock<=0?true:false} onClick={addToCartHandler}>Add To Cart</button>
         
                         </div>
-                        status:{" "}
-                        <b className={product.stock<1 ?"redColor":"greenColor"}>
+                        <p className='stock-info'>
+                            Stock :
+                            <b className={product.stock<1 ?"redColor":"greenColor"}>
         
-                        {product.stock<1?"OutOfStock":"InStock"}
-                        </b>
+                            {product.stock<1?"OutOfStock":"InStock"}
+                            </b>
+                        </p>
+                        
                     </div>
                     <div className='deatailBlock-4'>
                         Desciption: <p>{product.description}</p>
                     </div>
-                    <button className='submitReview' onClick={submitReviewToggle}>Submit Review</button>
+                    <button className='btn-more btn-submit-review' onClick={submitReviewToggle}>Submit Review</button>
                 </div>
             </div>
-            <h3 className="reviewsHeading">REVIEWS</h3>
+            
             <Dialog aria-labelledby='simple-dialog-title' open={open} onClose={submitReviewToggle}>
                     <DialogTitle>Submit Review</DialogTitle>
                     <DialogContent className='submitDialog'>
@@ -170,6 +178,10 @@ function ProductDetail() {
                         </DialogActions>
                     </DialogContent>
             </Dialog>
+            <div className='items-container'>
+
+            <div className='line'></div>
+            <h1 className='heading'>Reviews</h1>
             {product.reviews && product.reviews[0] ?
             (
                 <div className='reviews'>
@@ -184,6 +196,7 @@ function ProductDetail() {
             :
             (<p className='noReview'>No Reviews Yet</p>)
             }
+            </div>
             </Fragment>
             }
         </Fragment>

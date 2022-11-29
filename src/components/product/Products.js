@@ -62,10 +62,13 @@ function Products() {
               <FaBars  />  
 
             </div>
-            <h2 className='productHeading'>Products</h2>
+            <div className='items-container'>
+
+            <div className='line'></div>
+            <h1 className='heading'>New Ariavals</h1>
             {
-            products.length===0?<h5 className='productHeading' style={{color:'red'}}>Nothing to show !</h5>: 
-            <Fragment>
+                products.length===0?<h5 className='productHeading' style={{color:'red'}}>Nothing to show !</h5>: 
+                <Fragment>
                 <div className="products">
                 {
                     products && products.map((product)=>{
@@ -73,9 +76,10 @@ function Products() {
                     })
                 }
                 
-            </div>
-            </Fragment>
+                 </div>
+                </Fragment>
             }
+            </div>
             <div className={`filter-container ${toggle}`}>
                 <div className="cancel-filter" onClick={()=>setToggle("toggle")}>
 
@@ -90,8 +94,8 @@ function Products() {
                 aria-labelledby='range-slider'
                 min={0}
                 max={25000}
-            
-            
+                
+                
                 />
                 <h5>categories</h5>
                 <ul className='category-box'>
@@ -101,10 +105,10 @@ function Products() {
 
                         </li>
                     })}
-                    <li className='cancel-category-btn' onClick={()=>setCategory(null)}>cancel</li>
+                    <li className='cancel-category-btn' onClick={()=>setCategory(null)}>select all</li>
                 </ul>
                 <fieldset>
-                    <h5>Reating </h5>
+                    <h5>Rating </h5>
                     <Slider
                     value={ratings}
                     aria-labelledby="continous-slider"

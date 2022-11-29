@@ -118,40 +118,40 @@ function LoginSignup() {
           <button ref={switcherTab}></button>
           </div>
           <form className='loginForm' ref={loginTab} onSubmit={loginSubmit}>
-              <div className="loginEmail">
-                  <MailOutlineIcon/>
-                  <input type="email" name="mail" placeholder='Email' required value={loginEmail} onChange={(e)=>setLoginEmail(e.target.value)} />
+              <div className="log-input" style={{'marginTop':'2rem'}}>
+                  <MailOutlineIcon className='log-icons'/>
+                  <input className='login-field' type="email" name="mail" placeholder='Email' required value={loginEmail} onChange={(e)=>setLoginEmail(e.target.value)} />
 
               </div>
-              <div className="loginPAssword">
-                  <LockOpenIcon/>
-              <input type="password" name="password" placeholder='Password' required value={loginPassword} onChange={(e)=>setLoginPassword(e.target.value)} />
+              <div className="log-input">
+                  <LockOpenIcon className='log-icons'/>
+              <input className='login-field' type="password" name="password" placeholder='Password' required value={loginPassword} onChange={(e)=>setLoginPassword(e.target.value)} />
 
               </div>
-              <Link to="/password/forget">Forget Password ?</Link>
-              <input type="submit" value={"Login"} className="loginBtn" />
+              <Link  to="/password/forget">Forget Password ?</Link>
+              <input style={{'marginTop':'8rem'}} type="submit" value={"Login"} className="loginBtn" />
 
           </form>
           <form  className="signUpForm" ref={registerTab} encType="multipart/form-data" onSubmit={registerSubmit}>
-             <div className="signUpName">
-                  <FaceIcon/>
-                  <input type="text" name="name" placeholder='Name' required value={name} onChange={registerDataChange} />
+             <div className="log-input">
+                  <FaceIcon className='log-icons'/>
+                  <input className='login-field' type="text" name="name" placeholder='Name' required value={name} onChange={registerDataChange} />
 
               </div> 
-              <div className='signUpEmail'>
-                  <MailOutlineIcon/>
-                  <input type="email" name="email" placeholder='Email' required value={email} onChange={registerDataChange} />
+              <div className='log-input'>
+                  <MailOutlineIcon className='log-icons'/>
+                  <input className='login-field' type="email" name="email" placeholder='Email' required value={email} onChange={registerDataChange} />
 
               </div>
-              <div className="signUpPassword">
-                  <LockOpenIcon/>
-                  <input type="password" name="password" placeholder='Password' required value={password} onChange={registerDataChange} />
+              <div className="log-input">
+                  <LockOpenIcon className='log-icons'/>
+                  <input className='login-field' type="password" name="password" placeholder='Password' required value={password} onChange={registerDataChange} />
 
 
               </div>
-              <div className="registerImage">
+              <div className="log-input registerImage">
                   <img src={avatarPreview} alt="Avtar Preview" />
-                  <input type="file" name="avatar" accept='image/*' onChange={registerDataChange} />
+                  <input className='' type="file" name="avatar" accept='image/*' onChange={registerDataChange} />
               </div>
               <input className='signUpBtn' type="submit" value={"register"} />
 

@@ -10,10 +10,10 @@ function CartItems({item, deleteCartItem}) {
 
         <img src={item.image} alt="" />
         <div>
-            <Link to={`/product/${item.product}`}>{item.name}</Link>
-            <span>{`RS: ${item.price}`}</span>
+            <Link className='cart-unit-title' to={`/product/${item.product}`}>{item.name}</Link>
+            <span className='cart-unit-price'>{`RS: ${item.price}`}</span>
 
-            <p onClick={()=>deleteCartItem(item.product)}>remove</p>
+            <p onClick={()=>deleteCartItem(item.product)}>Remove</p>
             </div>
         </div>
     </Fragment>

@@ -42,19 +42,19 @@
 
 }
 .fiter-btn{
-    margin-left: 1rem;
     font-size: 2rem;
-    color: tomato;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: fixed;
+    color: #00008B;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     cursor: pointer;
-    padding:0.5rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
-    margin-top: 1rem;
+    width: 64px;
+    transform: translate(20px, 10px);
+
     
 }
 .fiter-btn:hover{
-    color: rgb(246, 61, 28);
+    color: #020249;
 }
 
 .filter-container{
@@ -78,13 +78,14 @@
     position: absolute;
     top: 0;
     right: 0.5rem;
-    color: rgba(0, 0, 0, 0.477);
+    color: #00008ba1;
     font-size: 2rem;
     cursor: pointer;
+    margin-top: 0.8rem;
 
 }
 .cancel-filter:hover{
-    color: tomato;
+    color: #00008B;
 }
 .category-box{
     padding: 0;
@@ -97,23 +98,28 @@
 }
 .category-link{
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
+    padding: 0.5rem 0rem;
 
 
 }
 .category-link:hover{
-    color: tomato;
+    color: #00008B;
     transform: translateX(3%);
+}
+h5{
+    font-size: 1.2rem;
+    color: #00308F;
+    letter-spacing: 2px;
 }
 .cancel-category-btn{
     cursor: pointer;
-    color: tomato;
+    color: #00008ba1;
     text-align: center;
-    opacity: 0.7;
     box-sizing: border-box;
 }
 .cancel-category-btn:hover{
-    color: red;
+    color: #00008B;
     opacity: 1;
 }
 

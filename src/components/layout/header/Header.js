@@ -1,11 +1,20 @@
 import React, {useEffect,useState} from 'react'
 import './header.css'
 import {Link} from 'react-router-dom'
-import {FaSearch} from 'react-icons/fa'
-import {BiLogIn} from 'react-icons/bi'
-import {BiCart} from 'react-icons/bi'
+
+import { useNavigate } from 'react-router-dom'
+import {FaFacebookSquare} from 'react-icons/fa'
+import {AiFillTwitterSquare} from 'react-icons/ai'
+import {FaWhatsappSquare} from 'react-icons/fa'
+import {FaInstagramSquare} from 'react-icons/fa'
+import {BiSearchAlt} from 'react-icons/bi'
+import {AiOutlineShoppingCart} from 'react-icons/ai'
+import {BsHeart} from 'react-icons/bs'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {MdCancel} from 'react-icons/md'
 const Header = () => {
-  
+  const [navDisplay , setNavDispaly] =useState('nav-show')
+  const navigate=useNavigate()
   const [stickyNav, setStickyNav] = useState(false);
 
   useEffect(() => {
@@ -19,38 +28,90 @@ const Header = () => {
     
   }, []);
   return (
-    <nav className={`navbar navbar-expand-lg bg-light navbar_bg ${stickyNav ? 'sticky' : ''}`}>
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">E-Commerce app </a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <Link className="nav-link active"   to="/"   >Home</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/products"  aria-expanded="false">Products</Link>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Contact US</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Services</a>
-        </li>
-    
+  <div className="">
+      <div className="burger-container">
+                <GiHamburgerMenu className='resp-icons' onClick={()=>setNavDispaly('nav-show')}/>
+                <h2>Clothing Palette</h2>
+                <AiOutlineShoppingCart className='resp-icons'/>
+                
 
+        </div>
+         
+        <div className="main-conatainer">
+
+          <div className="middle-nav">
+            <div className="left-section">
+              <h1 className='logoHeading'>Clothing Palette</h1>
+            </div>
+            <div className='flip-section'>
+            <div className="middle-section">
+              <form action="" className='search-form'>
+
+                <input className='serch-input' type="text" placeholder='Search Product ....' />
+                <button className='serch-btn'>
+                    
+                    <BiSearchAlt className='serch-icon'/>
+                </button>
+              </form>
+            </div>
+            <div className="right-section">
+              <Link className='auth-link' to="/register">register</Link>
+              /
+              <Link className='auth-link' to="/login">login</Link>
+              <div className="inner-right">
+                <BsHeart className='middle-icons' />
+                <div>
+                    <p>1</p>
+                </div>
+                <AiOutlineShoppingCart onClick={()=>navigate('/cart')} className='middle-icons'/>
+                <div>
+                    <p>20</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+   
+        </div>
+        </div>
+        <div className={`bottom-nav  ${navDisplay}`}>
+        <MdCancel className='cancel-icon' onClick={()=>setNavDispaly('nav-hide')} />
+        <ul>
+            <li><Link className='bottom-nav-li-active' to="/">Home</Link></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Contact Us</a></li>
+            <li><a href="/">Services</a></li>
+
+        </ul>
+        <div className="bottom-responsive-section">
+            <Link className='auth-link' to="/register">register</Link>
+            /
+            <Link className='auth-link' to="/login">login</Link>
+            <div className="inner-right">
+                <BsHeart className='middle-icons' />
+                <div>
+                    <p>1</p>
+                </div>
+                <AiOutlineShoppingCart onClick={()=>navigate('/cart')} className='middle-icons'/>
+                <div>
+                    <p>20</p>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div className="top-nav-icons social-responsive-links">
+            <FaFacebookSquare className='top-icons'/>
+            <AiFillTwitterSquare className='top-icons'/>
+            <FaWhatsappSquare className='top-icons'/>
+            <FaInstagramSquare className='top-icons'/>
+        </div>
+      </div>
       
-      </ul>
-      <form className="d-flex" role="search">
-        <Link className='custom-icons' to={'/login'} ><BiLogIn/> </Link>
-        <Link className='custom-icons' to={'/cart'}><BiCart/></Link>
-        <Link className="custom-icons" to={'/Search'}><FaSearch/></Link>
-      </form>
-    </div>
+    
   </div>
-</nav>
   
   )
 }
